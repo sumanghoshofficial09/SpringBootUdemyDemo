@@ -26,6 +26,7 @@ public class App02HelloWorldSpring {
 		
 		System.out.println("What is my name "+myname);
 		
+		//System.out.println("What is my age "+ context.getBean("age"));
 		
 		
 		

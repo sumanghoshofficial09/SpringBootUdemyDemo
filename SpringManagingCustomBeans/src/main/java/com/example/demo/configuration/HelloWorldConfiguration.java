@@ -1,24 +1,19 @@
-package com.example.demo;
+package com.example.demo.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
+
+record Person(String name,int age) {}
 
 @Configuration
 public class HelloWorldConfiguration {
 	
-	
 	@Bean
-	public String name()
+	public Person person()
 	{
-		return "suman";
-	}
-	
-	
-	@Bean
-	public int age()
-	{
-		return 33;
+		Person person = new Person("suman", 33);
+		
+		return person;
 	}
 
 }
