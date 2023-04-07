@@ -1,7 +1,5 @@
 package com.example.demo.game;
 
-import com.example.demo.SuperContraGame;
-
 public class GameRunner {
 	
 	SuperContraGame  superContraGame;
