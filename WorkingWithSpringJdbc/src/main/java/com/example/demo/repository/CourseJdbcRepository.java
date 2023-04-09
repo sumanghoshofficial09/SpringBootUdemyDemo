@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,7 @@ public class CourseJdbcRepository {
 	String delete_query_id="Delete from mycourse where id=?";
 	
 	String delete_query_name="Delete from mycourse where name = ?";
-	
+	String select_query ="select * from mycourse where id =?";
 	
 
 	
@@ -36,6 +37,11 @@ public class CourseJdbcRepository {
 	public void deleteQueryByName(String name)
 	{
 		myJdbcTemplate.update(delete_query_name,name);
+	}
+	
+	public MyCourse getCourseByID(int id)
+	{
+		return (MyCourse) myJdbcTemplate.queryForObject(insert_query,new BeanPropertyRowMapper(MyCourse.class),id);
 	}
 	
 
