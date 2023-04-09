@@ -16,17 +16,17 @@ public class CourseConfigController {
 	@RequestMapping("/courseconfig")
 	public CourseConfigurationProperties  getCourseConfig()
 	{
+		System.out.println(props);
 		return props;
 	}
 	
 	
 	
-
-	public CourseConfigController(CourseConfigurationProperties props) {
-		super();
-		this.props = props;
-	}
 	
+	  public CourseConfigController(CourseConfigurationProperties props) { super();
+	  this.props = props; }
+	  
+	 
 	
 	
 
