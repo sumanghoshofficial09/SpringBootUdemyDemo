@@ -10,6 +10,12 @@ import com.example.demo.pojo.MyCourse;
 public class CourseJdbcRepository {
 	
 	String insert_query="INSERT INTO mycourse (id, name, author) VALUES (?, ?, ?) ";
+	
+	String delete_query_id="Delete from mycourse where id=?";
+	
+	String delete_query_name="Delete from mycourse where name = ?";
+	
+	
 
 	
 	@Autowired
@@ -19,6 +25,17 @@ public class CourseJdbcRepository {
 	{
 		
 		myJdbcTemplate.update(insert_query,mycourse.getId(),mycourse.getName(),mycourse.getAuthor());
+	}
+	
+	
+	public void deleteQueryByID(int id)
+	{
+		myJdbcTemplate.update(delete_query_id,id);
+	}
+	
+	public void deleteQueryByName(String name)
+	{
+		myJdbcTemplate.update(delete_query_name,name);
 	}
 	
 

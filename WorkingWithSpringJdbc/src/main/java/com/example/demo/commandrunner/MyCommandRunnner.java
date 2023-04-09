@@ -23,6 +23,11 @@ public class MyCommandRunnner implements CommandLineRunner {
 		repo.insertQuery(new MyCourse(3, "Graph  Theory  ", "hello"));
 		repo.insertQuery(new MyCourse(4, "Sql ", "Hii"));
 		
+		/////////////////////////////////////////////////////
+		
+		repo.deleteQueryByID(3);
+		repo.deleteQueryByName("Sql");
+		
 	}
 
 }
