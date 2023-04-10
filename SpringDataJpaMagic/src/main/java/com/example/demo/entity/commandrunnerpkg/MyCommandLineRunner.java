@@ -25,6 +25,8 @@ public class MyCommandLineRunner implements CommandLineRunner {
 		
 		repository.findAll().forEach(System.out::println);
 		
+		repository.findByAuthor("puja").forEach(System.out::println);
+		
 	}
 
 }
